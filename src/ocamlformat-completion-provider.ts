@@ -30,12 +30,12 @@ const options: OCamlFormatOption[] = [
   },
 ]
 
-const hasEqToken = (lineText: string) => {
+const hasEq = (lineText: string) => {
   return lineText.includes('=')
 }
 
 const hasOptionKey = (lineText: string) => {
-  return hasEqToken(lineText)
+  return hasEq(lineText)
 }
 
 const getOptionKey = (lineText: string) => {

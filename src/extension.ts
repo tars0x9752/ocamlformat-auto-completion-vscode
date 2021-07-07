@@ -3,7 +3,7 @@ import { completionProvider } from './ocamlformat-completion-provider'
 
 export function activate(ctx: ExtensionContext) {
   const ocamlformatConfigSelector: DocumentSelector = {
-    language: 'ocamlformat',
+    language: 'ocaml.ocamlformat',
     pattern: '**/.ocamlformat',
     scheme: 'file',
   }

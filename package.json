@@ -16,14 +16,14 @@
   "contributes": {
     "languages": [
       {
-        "id": "ocamlformat",
+        "id": "ocaml.ocamlformat",
         "extensions": [
           ".ocamlformat"
         ],
         "aliases": [
           "ocamlformat",
           "OCamlFormat",
-					"OcamlFormat"
+          "OcamlFormat"
         ],
         "filenames": [],
         "configuration": "./ocamlformat.language-config.json"
