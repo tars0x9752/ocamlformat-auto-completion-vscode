@@ -1,12 +1,14 @@
 # ocamlformat-auto-completion
 
-Auto completion support for `.ocamlformat` file.
+Auto completion support for OCamlFormat config file.
 
 ## Features
 
-- Auto complete option names.
-- Auto complete option values.
-## Demo
+- Auto completes option names.
+- Auto completes option values.
+- Displays a description of the option.
+
+See the demo below to see how it works.
 
 ![ocamlformat-demo](https://user-images.githubusercontent.com/46079709/124963946-666d0a80-e05b-11eb-9747-75002e458818.gif)
 
