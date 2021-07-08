@@ -8,7 +8,7 @@ Auto completion support for `.ocamlformat` file.
 - Auto complete option values.
 ## Demo
 
-![demo](https://user-images.githubusercontent.com/46079709/90333051-65735a80-dffd-11ea-9fb8-8a7ca6824a6d.gif)
+![ocamlformat-demo](https://user-images.githubusercontent.com/46079709/124963946-666d0a80-e05b-11eb-9747-75002e458818.gif)
 
 
 ## Supported OCamlFormat versions
