@@ -31,23 +31,24 @@ const getSuggestedValues = (key: string) => {
   return mathedOption?.values ?? []
 }
 
-const getValueCompletionItems = (values: string[]) => {
+const getValueCompletionItems = (values: string[], documentation: string | undefined) => {
   const valuesSortOrder = {
     true: '1',
     false: '2',
-    unset: '9',
   }
 
   return values.map(value => {
     const completionItem = new CompletionItem(value, CompletionItemKind.Value)
 
-    completionItem.sortText = valuesSortOrder[value as keyof typeof valuesSortOrder] || '3' + value
+    completionItem.sortText = valuesSortOrder[value as keyof typeof valuesSortOrder] || `3${value}`
+
+    completionItem.documentation = documentation
 
     return completionItem
   })
 }
 
-const getKeyCompletionItems = (textOfEntireLine: string): CompletionItem[] => {
+const getKeyCompletionItems = (): CompletionItem[] => {
   return options.map(option => {
     const completionItem = new CompletionItem(option.key, CompletionItemKind.Property)
 
@@ -62,11 +63,13 @@ const autoCompleteOptionValues = (textOfLineUpToCursor: string): CompletionItem[
 
   const suggestedOValues = getSuggestedValues(key)
 
-  return getValueCompletionItems(suggestedOValues)
+  const documentation = options.find(option => option.key === key)?.documentation
+
+  return getValueCompletionItems(suggestedOValues, documentation)
 }
 
-const autoCompleteOptionKeys = (textOfEntireLine: string): CompletionItem[] => {
-  return getKeyCompletionItems(textOfEntireLine)
+const autoCompleteOptionKeys = (): CompletionItem[] => {
+  return getKeyCompletionItems()
 }
 
 export const completionProvider: CompletionItemProvider = {
@@ -77,7 +80,7 @@ export const completionProvider: CompletionItemProvider = {
     if (hasOptionKey(lineTextUpToCursor)) {
       return autoCompleteOptionValues(lineTextUpToCursor)
     } else {
-      return autoCompleteOptionKeys(entierLineText)
+      return autoCompleteOptionKeys()
     }
   },
 
