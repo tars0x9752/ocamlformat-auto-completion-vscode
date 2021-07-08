@@ -2,7 +2,13 @@
   "name": "ocamlformat-auto-completion",
   "displayName": "OCamlFormat Auto Completion",
   "description": "",
+  "license": "MIT",
   "version": "0.1.0",
+  "publisher": "tars0x9752",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tars0x9752/ocamlformat-auto-completion-vscode"
+  },
   "engines": {
     "vscode": "^1.57.0"
   },
