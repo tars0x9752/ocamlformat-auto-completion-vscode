@@ -1,5 +1,3 @@
-import { join } from 'path'
-
 export type OCamlFormatOption = {
   key: string
   values: string[]
