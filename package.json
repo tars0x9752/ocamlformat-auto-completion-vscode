@@ -22,8 +22,7 @@
         ],
         "aliases": [
           "ocamlformat",
-          "OCamlFormat",
-          "OcamlFormat"
+          "OCamlFormat"
         ],
         "filenames": [],
         "configuration": "./ocamlformat.language-config.json"

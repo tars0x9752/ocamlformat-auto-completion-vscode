@@ -1,7 +1,7 @@
 import { DocumentSelector, ExtensionContext, languages } from 'vscode'
-import { completionProvider } from './ocamlformat-completion-provider'
+import { completionProvider } from './completion-provider'
 
-export function activate(ctx: ExtensionContext) {
+export function activate() {
   const ocamlformatConfigSelector: DocumentSelector = {
     language: 'ocaml.ocamlformat',
     pattern: '**/.ocamlformat',

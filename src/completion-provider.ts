@@ -5,30 +5,7 @@ import {
   Position,
   TextDocument,
 } from 'vscode'
-
-type OCamlFormatOption = {
-  key: string
-  values: string[]
-  documentation: string
-}
-
-const options: OCamlFormatOption[] = [
-  {
-    key: 'align-cases',
-    values: ['true', 'false'],
-    documentation: 'Align match/try cases vertically. The flag is unset by default.',
-  },
-  {
-    key: 'align-constructors-decl',
-    values: ['true', 'false'],
-    documentation: 'Align type declarations vertically. The flag is unset by default.',
-  },
-  {
-    key: 'align-variants-decl',
-    values: ['true', 'false'],
-    documentation: 'Align type variants declarations vertically. The flag is unset by default.',
-  },
-]
+import { options } from './ocamlformat-options'
 
 const hasEq = (lineText: string) => {
   return lineText.includes('=')
