@@ -1,4 +1,4 @@
-import { DocumentSelector, ExtensionContext, languages } from 'vscode'
+import { DocumentSelector, languages } from 'vscode'
 import { completionProvider } from './completion-provider'
 
 export function activate() {

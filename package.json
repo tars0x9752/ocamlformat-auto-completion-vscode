@@ -24,8 +24,7 @@
           "ocamlformat",
           "OCamlFormat"
         ],
-        "filenames": [],
-        "configuration": "./ocamlformat.language-config.json"
+        "filenames": []
       }
     ]
   },
