@@ -6,7 +6,7 @@ export type OCamlFormatOption = {
 
 const numValues = Array.from({ length: 10 }, (_, i) => `${i}`)
 
-export const options: OCamlFormatOption[] = [
+export const OPTIONS_V0_18_0: OCamlFormatOption[] = [
   // OPTIONS
   {
     key: 'check',
@@ -208,8 +208,8 @@ export const options: OCamlFormatOption[] = [
   },
   {
     key: 'version',
-    values: ['VERSION'],
-    documentation: 'The version that you use to format.'
+    values: ['0.18.0'],
+    documentation: 'The version that you use to format.',
   },
 
   // CODE FORMATTING STYLE OPTIONS

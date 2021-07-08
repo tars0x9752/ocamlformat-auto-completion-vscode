@@ -5,7 +5,7 @@ import {
   Position,
   TextDocument,
 } from 'vscode'
-import { options } from './ocamlformat-options'
+import { OPTIONS_V0_18_0 as options } from './options/v0_18_0'
 
 const hasEq = (lineText: string) => {
   return lineText.includes('=')
