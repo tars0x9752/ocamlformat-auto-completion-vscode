@@ -3,7 +3,7 @@
   "displayName": "OCamlFormat Auto Completion",
   "description": "Provides auto-completion for .ocamlformat",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "tars0x9752",
   "icon": "assets/logo.png",
   "repository": {
