@@ -11,7 +11,7 @@ import {
 let client: LanguageClient
 
 export function activate(context: ExtensionContext) {
-  const lspServerCommand = context.asAbsolutePath('main.exe')
+  const lspServerCommand = context.asAbsolutePath('lsp.exe')
 
   const serverOptions: ServerOptions = {
     run: { command: lspServerCommand, transport: TransportKind.stdio },
