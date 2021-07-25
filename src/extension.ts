@@ -1,14 +1,52 @@
-import { DocumentSelector, languages } from 'vscode'
-import { completionProvider } from './completion-provider'
+import { ExtensionContext, workspace } from 'vscode'
+import { Trace } from 'vscode-jsonrpc'
 
-export function activate() {
-  const ocamlformatConfigSelector: DocumentSelector = {
-    language: 'ocaml.ocamlformat',
-    pattern: '**/.ocamlformat',
-    scheme: 'file',
+import {
+  LanguageClient,
+  LanguageClientOptions,
+  ServerOptions,
+  TransportKind,
+} from 'vscode-languageclient/node'
+
+let client: LanguageClient
+
+export function activate(context: ExtensionContext) {
+  const lspServerCommand = context.asAbsolutePath('main.exe')
+
+  const serverOptions: ServerOptions = {
+    run: { command: lspServerCommand, transport: TransportKind.stdio },
+    debug: { command: lspServerCommand, transport: TransportKind.stdio },
   }
 
-  languages.registerCompletionItemProvider(ocamlformatConfigSelector, completionProvider)
+  const clientOptions: LanguageClientOptions = {
+    documentSelector: [
+      {
+        pattern: '**/*.ocamlformat',
+        scheme: 'file',
+      },
+    ],
+    synchronize: {
+      fileEvents: workspace.createFileSystemWatcher('**/*.ocamlformat'),
+    },
+  }
+
+  client = new LanguageClient(
+    'ocamlformatConfigLSPClient',
+    'ocamlformatConfigLSPClient',
+    serverOptions,
+    clientOptions
+  )
+
+  client.trace = Trace.Verbose
+
+  client.start()
 
   return
+}
+
+export function deactivate(): Thenable<void> | undefined {
+  if (!client) {
+    return undefined
+  }
+  return client.stop()
 }
